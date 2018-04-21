@@ -5,7 +5,9 @@ defmodule PlayWeb.Router do
     plug(:accepts, ["json"])
   end
 
-  scope "/api", PlayWeb do
+  scope "/", PlayWeb do
     pipe_through(:api)
+
+    get "/", RootController, :index
   end
 end
