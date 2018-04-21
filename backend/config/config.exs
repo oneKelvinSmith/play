@@ -6,16 +6,14 @@
 use Mix.Config
 
 # General application configuration
-config :play,
-  ecto_repos: [Play.Repo]
+config :play, ecto_repos: [Play.Repo]
 
 # Configures the endpoint
 config :play, PlayWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "x0BW8Z1kskOozlhE/yuXvqpMI9Q4BEg2ZOD+HJ9S5W5fKh9fr/yzmnHMLjkuso+l",
   render_errors: [view: PlayWeb.ErrorView, accepts: ~w(json)],
-  pubsub: [name: Play.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: Play.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
@@ -24,4 +22,4 @@ config :logger, :console,
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
-import_config "#{Mix.env}.exs"
+import_config "#{Mix.env()}.exs"

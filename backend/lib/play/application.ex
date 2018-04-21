@@ -11,7 +11,7 @@ defmodule Play.Application do
       # Start the Ecto repository
       supervisor(Play.Repo, []),
       # Start the endpoint when the application starts
-      supervisor(PlayWeb.Endpoint, []),
+      supervisor(PlayWeb.Endpoint, [])
       # Start your own worker by calling: Play.Worker.start_link(arg1, arg2, arg3)
       # worker(Play.Worker, [arg1, arg2, arg3]),
     ]
