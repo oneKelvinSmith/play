@@ -1,8 +1,8 @@
-defmodule BackendWeb.UserSocket do
+defmodule PlayWeb.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", BackendWeb.RoomChannel
+  # channel "room:*", PlayWeb.RoomChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
@@ -30,7 +30,7 @@ defmodule BackendWeb.UserSocket do
   # Would allow you to broadcast a "disconnect" event and terminate
   # all active sockets and channels for a given user:
   #
-  #     BackendWeb.Endpoint.broadcast("user_socket:#{user.id}", "disconnect", %{})
+  #     PlayWeb.Endpoint.broadcast("user_socket:#{user.id}", "disconnect", %{})
   #
   # Returning `nil` makes this socket anonymous.
   def id(_socket), do: nil

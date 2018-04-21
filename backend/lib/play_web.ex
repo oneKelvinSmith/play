@@ -1,12 +1,12 @@
-defmodule BackendWeb do
+defmodule PlayWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use BackendWeb, :controller
-      use BackendWeb, :view
+      use PlayWeb, :controller
+      use PlayWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,24 +19,24 @@ defmodule BackendWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: BackendWeb
+      use Phoenix.Controller, namespace: PlayWeb
       import Plug.Conn
-      import BackendWeb.Router.Helpers
-      import BackendWeb.Gettext
+      import PlayWeb.Router.Helpers
+      import PlayWeb.Gettext
     end
   end
 
   def view do
     quote do
-      use Phoenix.View, root: "lib/backend_web/templates",
-                        namespace: BackendWeb
+      use Phoenix.View, root: "lib/play_web/templates",
+                        namespace: PlayWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 2, view_module: 1]
 
-      import BackendWeb.Router.Helpers
-      import BackendWeb.ErrorHelpers
-      import BackendWeb.Gettext
+      import PlayWeb.Router.Helpers
+      import PlayWeb.ErrorHelpers
+      import PlayWeb.Gettext
     end
   end
 
@@ -51,7 +51,7 @@ defmodule BackendWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import BackendWeb.Gettext
+      import PlayWeb.Gettext
     end
   end
 

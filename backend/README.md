@@ -1,4 +1,4 @@
-# Backend
+# Play
 
 To start your Phoenix server:
 

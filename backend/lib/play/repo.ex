@@ -1,5 +1,5 @@
-defmodule Backend.Repo do
-  use Ecto.Repo, otp_app: :backend
+defmodule Play.Repo do
+  use Ecto.Repo, otp_app: :play
 
   @doc """
   Dynamically loads the repository url from the

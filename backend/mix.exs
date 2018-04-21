@@ -1,9 +1,9 @@
-defmodule Backend.Mixfile do
+defmodule Play.Mixfile do
   use Mix.Project
 
   def project do
     [
-      app: :backend,
+      app: :play,
       version: "0.0.1",
       elixir: "~> 1.4",
       elixirc_paths: elixirc_paths(Mix.env),
@@ -19,7 +19,7 @@ defmodule Backend.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Backend.Application, []},
+      mod: {Play.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -38,7 +38,8 @@ defmodule Backend.Mixfile do
       {:phoenix_ecto, "~> 3.2"},
       {:postgrex, ">= 0.0.0"},
       {:gettext, "~> 0.11"},
-      {:cowboy, "~> 1.0"}
+      {:cowboy, "~> 1.0"},
+      {:credo, "~> 0.9.1", only: [:dev, :test], runtime: false}
     ]
   end
 

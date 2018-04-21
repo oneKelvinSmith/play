@@ -1,4 +1,4 @@
-defmodule BackendWeb.ChannelCase do
+defmodule PlayWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -21,15 +21,15 @@ defmodule BackendWeb.ChannelCase do
       use Phoenix.ChannelTest
 
       # The default endpoint for testing
-      @endpoint BackendWeb.Endpoint
+      @endpoint PlayWeb.Endpoint
     end
   end
 
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Backend.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Play.Repo)
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Backend.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Play.Repo, {:shared, self()})
     end
     :ok
   end

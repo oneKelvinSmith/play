@@ -1,14 +1,14 @@
-defmodule BackendWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :backend
+defmodule PlayWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :play
 
-  socket "/socket", BackendWeb.UserSocket
+  socket "/socket", PlayWeb.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :backend, gzip: false,
+    at: "/", from: :play, gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
@@ -32,10 +32,10 @@ defmodule BackendWeb.Endpoint do
   # Set :encryption_salt if you would also like to encrypt it.
   plug Plug.Session,
     store: :cookie,
-    key: "_backend_key",
-    signing_salt: "ruq21EyQ"
+    key: "_play_key",
+    signing_salt: "qLpHpwku"
 
-  plug BackendWeb.Router
+  plug PlayWeb.Router
 
   @doc """
   Callback invoked for dynamically configuring the endpoint.

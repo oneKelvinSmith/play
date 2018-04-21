@@ -1,4 +1,4 @@
-defmodule Backend.DataCase do
+defmodule Play.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -16,20 +16,20 @@ defmodule Backend.DataCase do
 
   using do
     quote do
-      alias Backend.Repo
+      alias Play.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import Backend.DataCase
+      import Play.DataCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Backend.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Play.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Backend.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Play.Repo, {:shared, self()})
     end
 
     :ok
